@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Pictures/Stuff/Castle.png" type="Texture" id=1]
+
+[node name="Castle" type="StaticBody2D"]
+scale = Vector2( 5, 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 48.3968, -172.51 )
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2( 50.1905, -172.51 )
+polygon = PoolVector2Array( 157.27, -47.9404, -241.088, -46.881, -241.819, 175.974, -209.102, 178.252, -208.431, 221.961, -196.147, 232.985, -180.083, 235.19, -164.847, 227.197, -158.483, 218.712, -95.5504, 218.005, -95.5504, 252.653, -87.1637, 255.664, -77.1656, 251.946, -69.3875, 244.167, -30.4966, 243.46, -21.3329, 250.624, -14.0883, 255.979, -3.62653, 251.946, -2.21231, 218.005, 55.0633, 217.297, 68.4365, 230.15, 90.1701, 236.765, 107.809, 233.93, 120.117, 226.49, 130.017, 214.469, 131.171, 177.491, 157.363, 176.697 )

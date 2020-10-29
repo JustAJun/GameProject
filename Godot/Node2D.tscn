@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Game/Buildings/Castle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Buildings/House1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Pictures/Ground/Gr2.png" type="Texture" id=4]
+[ext_resource path="res://Game/Enemies/Acolyte.tscn" type="PackedScene" id=5]
+
+[sub_resource type="TileSet" id=1]
+
+[node name="GameRPG" type="Node2D"]
+
+[node name="Backgrond" type="Sprite" parent="."]
+scale = Vector2( 3, 3 )
+z_index = -10
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( -896, -144, 4208, 1744 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+visible = false
+tile_set = SubResource( 1 )
+cell_size = Vector2( 128, 128 )
+format = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Player" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( -326.268, 53.8174 )
+
+[node name="Castle" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 0, -865.255 )
+
+[node name="House1" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 1793.15, -1176.41 )
+
+[node name="House2" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( -1683.26, -1167.18 )
+
+[node name="Acolyte" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -1435.23, 118.964 )
+
+[node name="Acolyte2" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -1465.12, 752.36 )
