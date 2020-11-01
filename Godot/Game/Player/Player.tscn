@@ -1,9 +1,10 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Pictures/MainCharacter/Player.png" type="Texture" id=1]
 [ext_resource path="res://Game/Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://Overlap/Hitbox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Overlap/PlayerHitbox.gd" type="Script" id=4]
+[ext_resource path="res://Overlap/Hurtbox.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 8.9808
@@ -452,8 +453,12 @@ start_node = "Idle"
 [sub_resource type="AnimationNodeStateMachinePlayback" id=34]
 
 [sub_resource type="CapsuleShape2D" id=35]
-radius = 12.6632
-height = 6.08315
+radius = 8.32446
+height = 15.5165
+
+[sub_resource type="CapsuleShape2D" id=36]
+radius = 13.0
+height = 6.0
 
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 2.5, 2.5 )
@@ -496,23 +501,34 @@ parameters/Attack/blend_position = Vector2( 0, 1 )
 parameters/Idle/blend_position = Vector2( 0, 1 )
 parameters/Run/blend_position = Vector2( 0, 1 )
 
+[node name="Hurtbox" parent="." instance=ExtResource( 5 )]
+visible = false
+scale = Vector2( 1, 1 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( 0, -12 )
+shape = SubResource( 35 )
+
 [node name="Pivot" type="Position2D" parent="."]
+visible = false
 position = Vector2( 0, -10 )
-rotation = 3.14159
 
 [node name="PlayerHitbox" parent="Pivot" instance=ExtResource( 3 )]
-visible = false
 position = Vector2( 20, 0 )
 collision_layer = 0
 collision_mask = 8
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" parent="Pivot/PlayerHitbox" index="0"]
-shape = SubResource( 35 )
+shape = SubResource( 36 )
 disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 3, 3 )
+
+[editable path="Hurtbox"]
 
 [editable path="Pivot/PlayerHitbox"]
