@@ -1,0 +1,175 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Pictures/UI/Back.png" type="Texture" id=1]
+[ext_resource path="res://Fonts/Transylv.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Pictures/UI/Button.png" type="Texture" id=3]
+[ext_resource path="res://Sounds/ClickUI.wav" type="AudioStream" id=4]
+[ext_resource path="res://UI/TitleScreen.gd" type="Script" id=5]
+[ext_resource path="res://UI/Fade_scene_change.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 120
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 38
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 38
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 38
+font_data = ExtResource( 2 )
+
+[node name="TitleScreen" type="Node"]
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -16, -16 )
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_top = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 192.0
+margin_top = 20.0
+margin_right = 831.0
+margin_bottom = 580.0
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 16.0
+custom_constants/separation = 50
+
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_right = 639.0
+margin_bottom = 172.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.494118, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+text = "Willpower origin"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_left = 143.0
+margin_top = 222.0
+margin_right = 496.0
+margin_bottom = 477.0
+size_flags_horizontal = 4
+custom_constants/separation = 30
+
+[node name="PlayButton" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_right = 353.0
+margin_bottom = 65.0
+size_flags_horizontal = 4
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+texture_disabled = ExtResource( 3 )
+texture_focused = ExtResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/PlayButton"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 16.5
+margin_top = -31.5
+margin_right = -21.5
+margin_bottom = 26.5
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.313726, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+text = "PLAY"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsButton" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 95.0
+margin_right = 353.0
+margin_bottom = 160.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+texture_disabled = ExtResource( 3 )
+texture_focused = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/OptionsButton"]
+margin_left = 16.5
+margin_top = 1.0
+margin_right = 331.5
+margin_bottom = 59.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.313726, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+text = "Options"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitButton" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 190.0
+margin_right = 353.0
+margin_bottom = 255.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+texture_disabled = ExtResource( 3 )
+texture_focused = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/ExitButton"]
+margin_left = 16.5
+margin_top = 1.0
+margin_right = 331.5
+margin_bottom = 59.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.313726, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+text = "Exit"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FadeEffect" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="fade_finished" from="FadeEffect" to="." method="_on_FadeEffect_fade_finished"]
+
+[editable path="FadeEffect"]

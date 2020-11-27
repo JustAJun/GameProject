@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Fonts/ColumbiaRandom BoldItalic.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Fonts/Samson.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Fonts/Transylv.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 13
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 26
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 28
+font_data = ExtResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="HealthUI" parent="." instance=ExtResource( 1 )]
+margin_left = 60.0
+margin_top = -20.0
+margin_bottom = -470.0
+rect_scale = Vector2( 0.8, 0.8 )
+
+[node name="Label" parent="HealthUI" index="2"]
+margin_left = 45.0226
+margin_top = 40.455
+margin_right = 145.023
+margin_bottom = 60.455
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "asdasda"
+
+[node name="LevelUI" type="Label" parent="HealthUI"]
+margin_left = -70.0
+margin_top = 50.0
+margin_right = -12.5
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Lvl 1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wave" type="Label" parent="."]
+margin_left = 412.0
+margin_top = 10.0
+margin_right = 612.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 150, 30 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Current wave: 1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[editable path="HealthUI"]

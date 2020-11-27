@@ -9,6 +9,5 @@ func can_see_player():
 func _on_DetectionZone_body_entered(body):
 	player = body
 
-
 func _on_DetectionZone_body_exited(body):
 	player = null

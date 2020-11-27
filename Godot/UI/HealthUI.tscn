@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/HealthUI.gd" type="Script" id=1]
+[ext_resource path="res://Pictures/UI/HP_Bar_Full.png" type="Texture" id=2]
+[ext_resource path="res://Pictures/UI/HP_Bar_Empty.png" type="Texture" id=3]
+
+[node name="HealthUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -824.0
+margin_bottom = -450.0
+rect_scale = Vector2( 2, 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HP_Full" type="TextureRect" parent="."]
+margin_right = 200.0
+margin_bottom = 150.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HP_Empty" type="TextureRect" parent="."]
+margin_right = 200.0
+margin_bottom = 150.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 35.0
+margin_top = 85.0
+margin_right = 135.0
+margin_bottom = 105.0
+rect_scale = Vector2( 1.2, 2.7 )
+text = "sdsdasdsad"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,12 +1,19 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Game/Buildings/Castle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game/Buildings/House1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Pictures/Ground/Gr2.png" type="Texture" id=4]
 [ext_resource path="res://Game/Enemies/Acolyte.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sounds/Hirasawa_Susumu_-_Berserk_-_Forces_67070536.wav" type="AudioStream" id=6]
+[ext_resource path="res://UI/PlayerUI.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Game/Camera2D.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Game/Enemies/AcolyteBoss.tscn" type="PackedScene" id=9]
+
 
 [sub_resource type="TileSet" id=1]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=2]
 
 [node name="GameRPG" type="Node2D"]
 
@@ -15,7 +22,7 @@ scale = Vector2( 3, 3 )
 z_index = -10
 texture = ExtResource( 4 )
 region_enabled = true
-region_rect = Rect2( -896, -144, 4208, 1744 )
+region_rect = Rect2( -1829.66, -1130.48, 2769.3, 1729.55 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -32,7 +39,13 @@ __meta__ = {
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( -326.268, 53.8174 )
+position = Vector2( 1092.28, -95.4977 )
+
+[node name="AnimationTree" parent="YSort/Player" index="2"]
+parameters/playback = SubResource( 2 )
+
+[node name="RemoteTransform2D" parent="YSort/Player" index="7"]
+remote_path = NodePath("../../../Camera2D")
 
 [node name="Castle" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 0, -865.255 )
@@ -44,7 +57,56 @@ position = Vector2( 1793.15, -1176.41 )
 position = Vector2( -1683.26, -1167.18 )
 
 [node name="Acolyte" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( -1435.23, 118.964 )
+position = Vector2( -1530.93, 288.602 )
+
+[node name="Acolyte3" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -972.165, 574.334 )
+
+[node name="Acolyte4" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -394.351, 720.375 )
+
+[node name="Acolyte5" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 253.309, 739.424 )
+
+[node name="Acolyte6" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -362.603, 879.115 )
+
+[node name="Acolyte7" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -730.88, 904.514 )
+
+[node name="Acolyte8" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -1067.41, 872.766 )
+
+[node name="Acolyte9" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -114.968, 460.041 )
+
+[node name="Acolyte10" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -578.489, 498.139 )
 
 [node name="Acolyte2" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( -1465.12, 752.36 )
+
+[node name="AcolyteBoss" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( -1137.53, -1041.45 )
+
+[node name="Camera2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1092.28, -95.4977 )
+scale = Vector2( 2.5, 2.5 )
+
+[node name="TopLeft" parent="Camera2D/Limits" index="0"]
+position = Vector2( -3936.38, -2599.4 )
+
+[node name="BottomRight" parent="Camera2D/Limits" index="1"]
+position = Vector2( 3581.44, 2598.19 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 7 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -40.0
+
+[editable path="YSort/Player"]
+
+[editable path="Camera2D"]
+
+[editable path="CanvasLayer"]
