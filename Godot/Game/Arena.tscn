@@ -23,10 +23,10 @@ region_rect = Rect2( -990.556, -651.995, 2045.79, 1491.71 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 6 )]
 
-[node name="AnimationTree" parent="YSort/Player" index="2"]
+[node name="AnimationTree" parent="YSort/Player" index="3"]
 parameters/playback = SubResource( 1 )
 
-[node name="RemoteTransform2D" parent="YSort/Player" index="7"]
+[node name="RemoteTransform2D" parent="YSort/Player" index="8"]
 remote_path = NodePath("../../../Camera2D")
 
 [node name="Castle" parent="YSort" instance=ExtResource( 3 )]
