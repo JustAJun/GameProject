@@ -8,10 +8,12 @@ const SPAWN_RANGE = 200
 onready var map = $YSort
 onready var acolyte = preload("res://Game/Enemies/Acolyte.tscn")
 onready var wolf = preload("res://Game/Enemies/Wolf.tscn")
+onready var pauseScene = preload("res://UI/PauseScene.tscn")
 onready var player = $YSort/Player
 onready var spawnTimer = $SpawnTimer
 onready var wave = $CanvasLayer/Wave
 
+var isPaused = false; 
 var spawn_place 
 var spawn_x
 var spawn_y
@@ -37,8 +39,15 @@ func _ready():
 		
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().change_scene("res://UI/TitleScreen.tscn")
+		var paused_instance = pauseScene.instance()
+		paused_instance.position.x = 0
+		paused_instance.position.y = 0
+		map.add_child(paused_instance)
+		get_tree().paused = true;
+		
 
+#		get_tree().change_scene("res://UI/TitleScreen.tscn")
+		
 func choose_spawn_place():
 	var state_rand = [TOP, BOTTOM]
 	spawn_x = rand_range(player.global_position.x - NOT_SPAWN_RANGE_X - SPAWN_RANGE, player.global_position.x + NOT_SPAWN_RANGE_X + SPAWN_RANGE)
@@ -89,7 +98,7 @@ func add_enemy():
 
 func _on_SpawnTimer_timeout():
 	wave.text = "Current wave: " + str(current_wave_number)
-	for _i in range(10):
+	for _i in range(1):
 		add_enemy()
 	if current_wave_number * 2 + 10 > player.stats.level:
 		SPAWN_FREQUENCY = 3

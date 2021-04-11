@@ -66,6 +66,8 @@ func playerMove(delta):
 		var attackVector = global_position.direction_to(get_global_mouse_position())
 		animationTree.set("parameters/Attack/blend_position",attackVector)
 		state = ATTACK
+	if Input.is_action_just_pressed("fast_permission"):
+		position = get_global_mouse_position()
 
 func playerAttack():
 	vel = Vector2.ZERO

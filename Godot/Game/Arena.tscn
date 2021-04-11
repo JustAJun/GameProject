@@ -56,7 +56,7 @@ polygon = PoolVector2Array( -3810.94, -2460.04, 3726.11, -2473.29, 3725.91, 1960
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = -25.0
+volume_db = -17.0
 autoplay = true
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
 
