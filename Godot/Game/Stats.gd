@@ -31,9 +31,9 @@ func set_level(value):
 	
 func set_xp(value):
 	xp = value
-	if xp >= 20:
-		self.level += xp/20
-		xp = xp % 20
+	if xp >= 50:
+		self.level += xp/50
+		xp = xp % 50
 
 func set_strength(value):
 	var strength_change = value - strength

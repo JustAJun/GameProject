@@ -5,6 +5,9 @@ export(int) var ACCEL = 3000
 export(int) var FRICTION = 3000
 var vel = Vector2.ZERO
 
+signal player_death(value)
+
+
 enum {
 	MOVE,
 	ATTACK,
@@ -38,7 +41,8 @@ func _process(delta):
 			vel = Vector2.ZERO
 			animationState.travel("Death")
 			collision_layer = 0
-			
+
+		
 
 func playerMove(delta):
 	var inputVector = Vector2.ZERO
@@ -66,15 +70,17 @@ func playerMove(delta):
 		var attackVector = global_position.direction_to(get_global_mouse_position())
 		animationTree.set("parameters/Attack/blend_position",attackVector)
 		state = ATTACK
-	if Input.is_action_just_pressed("fast_permission"):
-		position = get_global_mouse_position()
+#	if Input.is_action_just_pressed("fast_permission"):
+#		position = get_global_mouse_position()
 
 func playerAttack():
 	vel = Vector2.ZERO
 	animationState.travel("Attack")
+#	get_node("Particles2D").emitting = true
 
 func playerAttackFinished():
 	state = MOVE
+#	get_node("Particles2D").emitting = false
 
 func _on_Hurtbox_area_entered(area):
 	if area.can_damage:
@@ -83,6 +89,12 @@ func _on_Hurtbox_area_entered(area):
 func player_death():
 	state = DEAD
 	get_tree().get_root().get_node("Arena/AudioStreamPlayer").stop()
-	
+
+func death_signal():
+	emit_signal("player_death")	
+
+
 func set_damage(value):
 	playerHitbox.damage = value
+
+

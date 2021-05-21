@@ -1,0 +1,449 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Pictures/Stuff/InventoryBG.png" type="Texture" id=1]
+[ext_resource path="res://Pictures/Stuff/Slot.png" type="Texture" id=2]
+[ext_resource path="res://Game/Inventory.gd" type="Script" id=3]
+[ext_resource path="res://Game/Slot.gd" type="Script" id=4]
+[ext_resource path="res://Fonts/Samson.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 235, 232 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 235, 232 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 318, 236 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 10
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[node name="Inventory" type="Node2D"]
+scale = Vector2( 2, 2 )
+script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 100.0
+margin_top = 30.0
+margin_right = 420.882
+margin_bottom = 263.372
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_left = 122.0
+margin_top = 45.0
+margin_right = 402.0
+margin_bottom = 251.0
+custom_constants/vseparation = 7
+custom_constants/hseparation = 5
+columns = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot1" type="Panel" parent="GridContainer"]
+margin_right = 35.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 4 )
+
+[node name="Slot2" type="Panel" parent="GridContainer"]
+margin_left = 40.0
+margin_right = 75.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot3" type="Panel" parent="GridContainer"]
+margin_left = 80.0
+margin_right = 115.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot4" type="Panel" parent="GridContainer"]
+margin_left = 120.0
+margin_right = 155.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot5" type="Panel" parent="GridContainer"]
+margin_left = 160.0
+margin_right = 195.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot6" type="Panel" parent="GridContainer"]
+margin_left = 200.0
+margin_right = 235.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot7" type="Panel" parent="GridContainer"]
+margin_left = 240.0
+margin_right = 275.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot8" type="Panel" parent="GridContainer"]
+margin_top = 42.0
+margin_right = 35.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot9" type="Panel" parent="GridContainer"]
+margin_left = 40.0
+margin_top = 42.0
+margin_right = 75.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot10" type="Panel" parent="GridContainer"]
+margin_left = 80.0
+margin_top = 42.0
+margin_right = 115.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot11" type="Panel" parent="GridContainer"]
+margin_left = 120.0
+margin_top = 42.0
+margin_right = 155.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot12" type="Panel" parent="GridContainer"]
+margin_left = 160.0
+margin_top = 42.0
+margin_right = 195.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot13" type="Panel" parent="GridContainer"]
+margin_left = 200.0
+margin_top = 42.0
+margin_right = 235.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot14" type="Panel" parent="GridContainer"]
+margin_left = 240.0
+margin_top = 42.0
+margin_right = 275.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot15" type="Panel" parent="GridContainer"]
+margin_top = 84.0
+margin_right = 35.0
+margin_bottom = 119.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot16" type="Panel" parent="GridContainer"]
+margin_left = 40.0
+margin_top = 84.0
+margin_right = 75.0
+margin_bottom = 119.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot17" type="Panel" parent="GridContainer"]
+margin_left = 80.0
+margin_top = 84.0
+margin_right = 115.0
+margin_bottom = 119.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot18" type="Panel" parent="GridContainer"]
+margin_left = 120.0
+margin_top = 84.0
+margin_right = 155.0
+margin_bottom = 119.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot19" type="Panel" parent="GridContainer"]
+margin_left = 160.0
+margin_top = 84.0
+margin_right = 195.0
+margin_bottom = 119.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot20" type="Panel" parent="GridContainer"]
+margin_left = 200.0
+margin_top = 84.0
+margin_right = 235.0
+margin_bottom = 119.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot21" type="Panel" parent="GridContainer"]
+margin_left = 240.0
+margin_top = 84.0
+margin_right = 275.0
+margin_bottom = 119.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot22" type="Panel" parent="GridContainer"]
+margin_top = 126.0
+margin_right = 35.0
+margin_bottom = 161.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot23" type="Panel" parent="GridContainer"]
+margin_left = 40.0
+margin_top = 126.0
+margin_right = 75.0
+margin_bottom = 161.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot24" type="Panel" parent="GridContainer"]
+margin_left = 80.0
+margin_top = 126.0
+margin_right = 115.0
+margin_bottom = 161.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot25" type="Panel" parent="GridContainer"]
+margin_left = 120.0
+margin_top = 126.0
+margin_right = 155.0
+margin_bottom = 161.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot26" type="Panel" parent="GridContainer"]
+margin_left = 160.0
+margin_top = 126.0
+margin_right = 195.0
+margin_bottom = 161.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot27" type="Panel" parent="GridContainer"]
+margin_left = 200.0
+margin_top = 126.0
+margin_right = 235.0
+margin_bottom = 161.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot28" type="Panel" parent="GridContainer"]
+margin_left = 240.0
+margin_top = 126.0
+margin_right = 275.0
+margin_bottom = 161.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot29" type="Panel" parent="GridContainer"]
+margin_top = 168.0
+margin_right = 35.0
+margin_bottom = 203.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot30" type="Panel" parent="GridContainer"]
+margin_left = 40.0
+margin_top = 168.0
+margin_right = 75.0
+margin_bottom = 203.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot31" type="Panel" parent="GridContainer"]
+margin_left = 80.0
+margin_top = 168.0
+margin_right = 115.0
+margin_bottom = 203.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot32" type="Panel" parent="GridContainer"]
+margin_left = 120.0
+margin_top = 168.0
+margin_right = 155.0
+margin_bottom = 203.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot33" type="Panel" parent="GridContainer"]
+margin_left = 160.0
+margin_top = 168.0
+margin_right = 195.0
+margin_bottom = 203.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot34" type="Panel" parent="GridContainer"]
+margin_left = 200.0
+margin_top = 168.0
+margin_right = 235.0
+margin_bottom = 203.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Slot35" type="Panel" parent="GridContainer"]
+margin_left = 240.0
+margin_top = 168.0
+margin_right = 275.0
+margin_bottom = 203.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Description" type="Panel" parent="."]
+visible = false
+margin_right = 100.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 150, 50 )
+mouse_filter = 2
+custom_styles/panel = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Description"]
+margin_left = 9.67081
+margin_top = 4.83541
+margin_right = 139.671
+margin_bottom = 44.8354
+rect_min_size = Vector2( 130, 40 )
+custom_fonts/font = SubResource( 4 )
+text = "asffwfes"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="mouse_entered" from="GridContainer/Slot1" to="GridContainer/Slot1" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot1" to="GridContainer/Slot1" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot2" to="GridContainer/Slot2" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot2" to="GridContainer/Slot2" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot3" to="GridContainer/Slot3" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot3" to="GridContainer/Slot3" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot4" to="GridContainer/Slot4" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot4" to="GridContainer/Slot4" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot5" to="GridContainer/Slot5" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot5" to="GridContainer/Slot5" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot6" to="GridContainer/Slot6" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot6" to="GridContainer/Slot6" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot7" to="GridContainer/Slot7" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot7" to="GridContainer/Slot7" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot8" to="GridContainer/Slot8" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot8" to="GridContainer/Slot8" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot9" to="GridContainer/Slot9" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot9" to="GridContainer/Slot9" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot10" to="GridContainer/Slot10" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot10" to="GridContainer/Slot10" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot11" to="GridContainer/Slot11" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot11" to="GridContainer/Slot5" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot12" to="GridContainer/Slot12" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot12" to="GridContainer/Slot6" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot13" to="GridContainer/Slot13" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot13" to="GridContainer/Slot5" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot14" to="GridContainer/Slot14" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot14" to="GridContainer/Slot5" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot15" to="GridContainer/Slot15" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot15" to="GridContainer/Slot5" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot16" to="GridContainer/Slot16" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot16" to="GridContainer/Slot6" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot17" to="GridContainer/Slot17" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot17" to="GridContainer/Slot7" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot18" to="GridContainer/Slot18" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot18" to="GridContainer/Slot6" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot19" to="GridContainer/Slot19" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot19" to="GridContainer/Slot7" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot20" to="GridContainer/Slot20" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot20" to="GridContainer/Slot7" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot21" to="GridContainer/Slot21" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot21" to="GridContainer/Slot7" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot22" to="GridContainer/Slot22" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot22" to="GridContainer/Slot6" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot23" to="GridContainer/Slot23" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot23" to="GridContainer/Slot5" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot24" to="GridContainer/Slot24" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot24" to="GridContainer/Slot5" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot25" to="GridContainer/Slot25" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot25" to="GridContainer/Slot8" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot26" to="GridContainer/Slot26" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot26" to="GridContainer/Slot7" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot27" to="GridContainer/Slot27" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot27" to="GridContainer/Slot5" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot28" to="GridContainer/Slot28" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot28" to="GridContainer/Slot6" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot29" to="GridContainer/Slot29" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot29" to="GridContainer/Slot5" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot30" to="GridContainer/Slot30" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot30" to="GridContainer/Slot7" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot31" to="GridContainer/Slot31" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot31" to="GridContainer/Slot6" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot32" to="GridContainer/Slot32" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot32" to="GridContainer/Slot5" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot33" to="GridContainer/Slot33" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot33" to="GridContainer/Slot4" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot34" to="GridContainer/Slot34" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot34" to="GridContainer/Slot7" method="_on_Slot_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer/Slot35" to="GridContainer/Slot35" method="_on_Slot_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Slot35" to="GridContainer/Slot6" method="_on_Slot_mouse_exited"]

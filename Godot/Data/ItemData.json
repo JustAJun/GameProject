@@ -1,0 +1,55 @@
+{
+  "Coins": {
+    "ItemCategory": "Money",
+    "StackSize": 1000,
+    "Description": "The eternal source of vice"
+  },
+  "Heal Potion": {
+    "ItemCategory": "Potion",
+    "AddHealth": 10,
+    "StackSize": 99,
+    "Description": "A potion that restores a small amount of health"
+  },
+  "Mana Potion": {
+    "ItemCategory": "Potion",
+    "AddMana": 10,
+    "StackSize": 99,
+    "Description": "A potion that restores a small amount of mana"
+  },
+  "Silver Ring": {
+    "ItemCategory": "Ring",
+    "Health": 5,
+    "StackSize": 1,
+    "Description": "An artifact of ancient times"
+  },
+  "Golden Ring": {
+    "ItemCategory": "Ring",
+    "Health": 10,
+    "StackSize": 1,
+    "Description": "The attribute of the rulers"
+  },
+  "Wooden Shield": {
+    "ItemCategory": "Shield",
+    "Defense": 5,
+    "StackSize": 1,
+    "Description": "A good thing for those who want to survire"
+  },
+  "Obsidian Shield": {
+    "ItemCategory": "Shield",
+    "Defense": 20,
+    "StackSize": 1,
+    "Description": "Lord's legacy!"
+  },
+  "Iron Sword1": {
+    "ItemCategory": "Sword",
+    "Attack": 5,
+    "StackSize": 1,
+    "Description": "A good thing for those who want to survire"
+  },
+  "Iron Sword2": {
+    "ItemCategory": "Sword",
+    "Attack": 20,
+    "StackSize": 1,
+    "Description": "Only for true swordsmen!"
+  }
+}

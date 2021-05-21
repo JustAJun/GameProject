@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Pictures/Ground/Gr2.png" type="Texture" id=1]
 [ext_resource path="res://Game/Arena.gd" type="Script" id=2]
@@ -7,6 +7,12 @@
 [ext_resource path="res://UI/PlayerUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/Player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sounds/Back.wav" type="AudioStream" id=7]
+[ext_resource path="res://UI/PauseScene.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Game/Items/ItemDrop.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Game/Inventory.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Hotbar.tscn" type="PackedScene" id=11]
+[ext_resource path="res://UI/UserInterface.gd" type="Script" id=12]
+[ext_resource path="res://Game/Skills.tscn" type="PackedScene" id=13]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
@@ -14,6 +20,7 @@
 script = ExtResource( 2 )
 
 [node name="Backgrond" type="Sprite" parent="."]
+position = Vector2( 4.2439, 15.5432 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 1 )
 region_enabled = true
@@ -23,7 +30,7 @@ region_rect = Rect2( -990.556, -651.995, 2045.79, 1491.71 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 6 )]
 
-[node name="AnimationTree" parent="YSort/Player" index="3"]
+[node name="AnimationTree" parent="YSort/Player" index="2"]
 parameters/playback = SubResource( 1 )
 
 [node name="RemoteTransform2D" parent="YSort/Player" index="8"]
@@ -31,6 +38,10 @@ remote_path = NodePath("../../../Camera2D")
 
 [node name="Castle" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 0, -2400 )
+
+[node name="ItemDrop" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( -457.498, 109.468 )
+scale = Vector2( 3, 3 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 4 )]
 scale = Vector2( 2.5, 2.5 )
@@ -41,7 +52,61 @@ position = Vector2( -3064.51, -2234.77 )
 [node name="BottomRight" parent="Camera2D/Limits" index="1"]
 position = Vector2( 3067.9, 2233.35 )
 
-[node name="CanvasLayer" parent="." instance=ExtResource( 5 )]
+[node name="UI" parent="." instance=ExtResource( 5 )]
+script = ExtResource( 12 )
+
+[node name="PauseScene" parent="UI" instance=ExtResource( 8 )]
+position = Vector2( 506.864, 301.58 )
+
+[node name="Sprite" parent="UI/PauseScene" index="0"]
+position = Vector2( -278.602, -133.427 )
+
+[node name="Label" parent="UI/PauseScene" index="1"]
+margin_left = -106.507
+margin_top = -228.0
+margin_right = 111.493
+margin_bottom = -161.0
+
+[node name="VBoxContainer" parent="UI/PauseScene" index="2"]
+margin_left = -297.034
+margin_top = -140.0
+margin_right = 415.966
+margin_bottom = 236.0
+
+[node name="PlayButton" parent="UI/PauseScene/VBoxContainer" index="0"]
+margin_left = 180.0
+margin_right = 533.0
+
+[node name="OptionsButton" parent="UI/PauseScene/VBoxContainer" index="1"]
+margin_left = 180.0
+margin_right = 533.0
+
+[node name="MenuButton" parent="UI/PauseScene/VBoxContainer" index="2"]
+margin_left = 180.0
+margin_right = 533.0
+
+[node name="ExitButton" parent="UI/PauseScene/VBoxContainer" index="3"]
+margin_left = 180.0
+margin_right = 533.0
+
+[node name="FadeEffect" parent="UI/PauseScene" index="3"]
+visible = false
+margin_left = -507.804
+margin_top = -303.928
+margin_right = 516.196
+margin_bottom = 296.072
+
+[node name="Inventory" parent="UI" instance=ExtResource( 10 )]
+visible = false
+position = Vector2( 600, 50 )
+scale = Vector2( 1, 1 )
+
+[node name="TextureRect" parent="UI/Inventory" index="0"]
+margin_bottom = 266.0
+
+[node name="Hotbar" parent="UI" instance=ExtResource( 11 )]
+
+[node name="Skills" parent="UI" instance=ExtResource( 13 )]
 
 [node name="SpawnTimer" type="Timer" parent="."]
 one_shot = true
@@ -58,12 +123,21 @@ polygon = PoolVector2Array( -3810.94, -2460.04, 3726.11, -2473.29, 3725.91, 1960
 stream = ExtResource( 7 )
 volume_db = -17.0
 autoplay = true
+
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
 
 [editable path="YSort/Player"]
-
+[editable path="YSort/Player/Hurtbox"]
+[editable path="YSort/Player/Pivot/PlayerHitbox"]
+[editable path="YSort/Player/SoftCollisions"]
 [editable path="Camera2D"]
-
-[editable path="CanvasLayer"]
-
-[editable path="CanvasLayer/HealthUI"]
+[editable path="UI"]
+[editable path="UI/HealthUI"]
+[editable path="UI/PauseScene"]
+[editable path="UI/PauseScene/VBoxContainer/PlayButton"]
+[editable path="UI/PauseScene/VBoxContainer/OptionsButton"]
+[editable path="UI/PauseScene/VBoxContainer/MenuButton"]
+[editable path="UI/PauseScene/VBoxContainer/ExitButton"]
+[editable path="UI/PauseScene/FadeEffect"]
+[editable path="UI/Inventory"]

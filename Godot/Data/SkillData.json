@@ -1,0 +1,16 @@
+{
+  "Blink": {
+    "SkillCategory": "Movement",
+    "SkillDamage": 0,
+    "SkillCooldown": 0,
+    "SkillRange": 0,
+    "Description": "Teleport"
+  },
+  "Fire Storm": {
+    "SkillCategory": "AOE",
+    "SkillDamage": 5,
+    "SkillCooldown": 5,
+    "SkillRange": 100,
+    "Description": "The storm of flame"
+  }
+}
