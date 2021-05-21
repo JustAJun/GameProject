@@ -29,6 +29,7 @@ func _ready():
 	playerHitbox.damage = stats.damage
 	stats.connect("no_health", self, "player_death")
 	stats.connect("damage_changed", self, "set_damage")
+	stats.health = stats.max_health
 	
 
 func _process(delta):

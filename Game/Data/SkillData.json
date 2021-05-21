@@ -8,7 +8,7 @@
   },
   "Fire Storm": {
     "SkillCategory": "AOE",
-    "SkillDamage": 5,
+    "SkillDamage": 10,
     "SkillCooldown": 5,
     "SkillRange": 100,
     "Description": "The storm of flame"
